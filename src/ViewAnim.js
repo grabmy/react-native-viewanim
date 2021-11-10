@@ -50,13 +50,21 @@ class ViewAnim extends React.Component {
 
     componentDidUpdate(prevProps)
     {
+        if (prevProps.easing !== this.props.easing) {
+            this.tween.setEasing(this.props.easing).stop().to(this.props.to);
+        }
+        if (prevProps.repeat !== this.props.repeat) {
+            this.tween.setRepeat(this.props.repeat).stop().to(this.props.to);
+        }
+        if (prevProps.duration !== this.props.duration) {
+            this.tween.setDuration(this.props.duration).stop().to(this.props.to);
+        }
         if (prevProps.to.x !== undefined && prevProps.to.x !== this.props.to.x
             || prevProps.to.y !== undefined && prevProps.to.y !== this.props.to.y
             || prevProps.to.rotate !== undefined && prevProps.to.rotate !== this.props.to.rotate
             || prevProps.to.opacity !== undefined && prevProps.to.opacity !== this.props.to.opacity
             || prevProps.to.scale !== undefined && prevProps.to.scale !== this.props.to.scale
             || prevProps.to.backgroundColor !== undefined && prevProps.to.backgroundColor !== this.props.to.backgroundColor
-            
             )
         {
             this.tween.to(this.props.to, this.props.duration);
@@ -81,7 +89,8 @@ class ViewAnim extends React.Component {
                 {scale: this.state.values.scale},
                 {rotate: this.state.values.rotate + 'deg'},
             ],
-            opacity: this.state.values.opacity
+            opacity: this.state.values.opacity,
+            backgroundColor: this.state.values.backgroundColor,
         };
 
         return <View style={[styles, this.props.style]}>{this.props.children}</View>;
@@ -114,7 +123,7 @@ ViewAnim.defaultProps = {
     to: {},
     repeat: 1,
     cycle: false,
-    duration: 500,
+    duration: 1000,
     delay: 0,
     frameDelay: 16,
     easing: SimpleTween.Easing.Cubic.InOut,
@@ -122,8 +131,8 @@ ViewAnim.defaultProps = {
     onEnd: () => {},
     trigger: "start",
     toggle: false,
-    resetOnStart: false,
     resetOnStart: true,
+    resetOnStop: false,
 };
 
 export default ViewAnim;
