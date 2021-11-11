@@ -49,13 +49,28 @@ class ViewAnim extends React.Component {
     componentDidUpdate(prevProps)
     {
         if (prevProps.easing !== this.props.easing) {
-            this.tween.setEasing(this.props.easing).stop().to(this.props.to);
+            this.tween.setEasing(this.props.easing).start();
         }
         if (prevProps.repeat !== this.props.repeat) {
-            this.tween.setRepeat(this.props.repeat).stop().to(this.props.to);
+            this.tween.setRepeat(this.props.repeat).start();
         }
         if (prevProps.duration !== this.props.duration) {
-            this.tween.setDuration(this.props.duration).stop().to(this.props.to);
+            this.tween.setDuration(this.props.duration).start();
+        }
+        if (prevProps.delay !== this.props.delay) {
+            this.tween.setDelay(this.props.delay).start();
+        }
+        if (prevProps.cycle !== this.props.cycle) {
+            this.tween.setCycle(this.props.cycle).start();
+        }
+        if (prevProps.frameDelay !== this.props.frameDelay) {
+            this.tween.setUpdateTime(this.props.frameDelay).start();
+        }
+        if (prevProps.resetOnStart !== this.props.resetOnStart) {
+            this.tween.setResetOnStart(this.props.resetOnStart);
+        }
+        if (prevProps.resetOnEnd !== this.props.resetOnEnd) {
+            this.tween.setResetOnEnd(this.props.resetOnEnd);
         }
         if (prevProps.to.x !== undefined && prevProps.to.x !== this.props.to.x
             || prevProps.to.y !== undefined && prevProps.to.y !== this.props.to.y
