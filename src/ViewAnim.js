@@ -35,7 +35,13 @@ class ViewAnim extends React.Component {
             .onStart(props.onStart)
             .onEnd(props.onEnd)
             .onUpdate(this.updateValues);
-
+        
+        if (this.props.chain.length > 0)
+        {
+            // Not implemented yet
+            // this.tween.chain(this.props.chain);
+        }
+        
         if (this.props.trigger === 'start' || this.props.trigger === 'toggle' && this.props.toggle)
         {
             this.tween.start();
@@ -132,6 +138,15 @@ ViewAnim.propTypes = {
     toggle: PropTypes.bool,
     resetOnStart: PropTypes.bool,
     resetOnEnd: PropTypes.bool,
+    chain: PropTypes.arrayOf(PropTypes.shape({
+        from: React.PropTypes.object,
+        to: PropTypes.object,
+        repeat: PropTypes.number,
+        duration: PropTypes.number,
+        delay: PropTypes.number,
+        cycle: PropTypes.bool,
+        easing: PropTypes.func,
+   })),
 };
 
 ViewAnim.defaultProps = {
@@ -150,6 +165,7 @@ ViewAnim.defaultProps = {
     toggle: false,
     resetOnStart: true,
     resetOnStop: false,
+    chain: [],
 };
 
 export default ViewAnim;
