@@ -79,8 +79,19 @@ export default HelloWorldApp;
 - `ViewAnim.Easing.Bounce.In`, `ViewAnim.Easing.Bounce.Out`, `ViewAnim.Easing.Bounce.InOut`
 - `ViewAnim.Easing.Vibrate.Once`, `ViewAnim.Easing.Vibrate.Repeat2`, `ViewAnim.Easing.Vibrate.Repeat3`, `ViewAnim.Easing.Vibrate.Repeat4`, `ViewAnim.Easing.Vibrate.Repeat5`, `ViewAnim.Easing.Vibrate.Repeat10`, `ViewAnim.Easing.Vibrate.Repeat15`, `ViewAnim.Easing.Vibrate.Repeat20`, `ViewAnim.Easing.Vibrate.Repeat30`
 
+
+## Changelog
+
+### Version 0.2.0
+
+- Do not call stop when animation is not playing
+
 ## TODO
 
+- When toggle = true animate from start to end, toggle = false animate from end to start
+- if initial property toggle = true, launch animation at start
+- Change property change detection
 - Add live modification of the viewanim properties
 - Add preset animation
 - Chain animations
+- write tests
