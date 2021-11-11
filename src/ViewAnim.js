@@ -36,11 +36,9 @@ class ViewAnim extends React.Component {
             .onEnd(props.onEnd)
             .onUpdate(this.updateValues);
 
-        if (this.props.trigger == 'start' && this.props.repeat)
+        if (this.props.trigger === 'start' || this.props.trigger === 'toggle' && this.props.toggle)
         {
-            setTimeout(() => {
-                this.tween.start();
-            }, 0);
+            this.tween.start();
         }
     }
 
@@ -68,8 +66,12 @@ class ViewAnim extends React.Component {
             )
         {
             this.tween.to(this.props.to, this.props.duration);
-        } else if (prevProps.toggle !== this.props.toggle) {
-            this.tween.start();
+        } else if (this.props.trigger == 'toggle' && prevProps.toggle !== this.props.toggle) {
+            if (this.props.toggle) {
+                this.tween.forward().start();
+            } else {
+                this.tween.backward().start();
+            }
         }
     }
 
