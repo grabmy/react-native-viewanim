@@ -85,13 +85,24 @@ export default HelloWorldApp;
 ### Version 0.2.0
 
 - Do not call stop when animation is not playing
+- When toggle = true animate from start to end, toggle = false animate from end to start
+- if initial property toggle = true, launch animation at start
 
 ## TODO
 
-- When toggle = true animate from start to end, toggle = false animate from end to start
-- if initial property toggle = true, launch animation at start
-- Change property change detection
+- Change property modification detection
 - Add live modification of the viewanim properties
-- Add preset animation
+- Add preset animations
+- make trigger an enum type "start" / "toggle" 
+- Add trigger type "none" to use only
 - Chain animations
+- Add examples with executables app files
 - write tests
+  - basic example trigger = start
+  - basic example trigger = toggle
+  - launch animation at start if toggle = true
+  - pause / resume
+  - cycle
+  - change to property
+- Add smooth property to soften animation
+ 
