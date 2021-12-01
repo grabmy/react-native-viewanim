@@ -1,6 +1,6 @@
 {
   "name": "react-native-viewanim",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "Animated view in React native without reanimated",
   "main": "index.js",
   "scripts": {

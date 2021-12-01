@@ -79,7 +79,6 @@ export default HelloWorldApp;
 - `ViewAnim.Easing.Bounce.In`, `ViewAnim.Easing.Bounce.Out`, `ViewAnim.Easing.Bounce.InOut`
 - `ViewAnim.Easing.Vibrate.Once`, `ViewAnim.Easing.Vibrate.Repeat2`, `ViewAnim.Easing.Vibrate.Repeat3`, `ViewAnim.Easing.Vibrate.Repeat4`, `ViewAnim.Easing.Vibrate.Repeat5`, `ViewAnim.Easing.Vibrate.Repeat10`, `ViewAnim.Easing.Vibrate.Repeat15`, `ViewAnim.Easing.Vibrate.Repeat20`, `ViewAnim.Easing.Vibrate.Repeat30`
 
-
 ## Changelog
 
 ### Version 0.2.0
@@ -87,13 +86,14 @@ export default HelloWorldApp;
 - Do not call stop when animation is not playing
 - When toggle = true animate from start to end, toggle = false animate from end to start
 - if initial property toggle = true, launch animation at start
+- Update to simple tween 0.3.2
 
 ## TODO
 
 - Change property modification detection
 - Add live modification of the viewanim properties
 - Add preset animations
-- make trigger an enum type "start" / "toggle" 
+- make trigger an enum type "start" / "toggle"
 - Add trigger type "none" to use only
 - Chain animations
 - Add examples with executables app files
@@ -105,4 +105,3 @@ export default HelloWorldApp;
   - cycle
   - change to property
 - Add smooth property to soften animation
- 
